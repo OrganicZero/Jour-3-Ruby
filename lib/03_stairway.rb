@@ -1,6 +1,6 @@
 $turns = 0
 
-def game
+def current_game
 	step = 0
 
 	puts "Bonjour et bienvenue au jeu!"
@@ -11,11 +11,11 @@ def game
 		$turns += 1
 		case
 		when dice == 1 
-			chance	if step != 0
-					step -= 1
-					puts "Tu as reculé d'une marche, tu es à la marche #{step}/10."
-				else
-					puts "Tu restes sur la même marche, tu es à la marche #{step}/10."
+			if step != 0
+				step -= 1
+				puts "Tu as reculé d'une marche, tu es à la marche #{step}/10."
+			else
+				puts "Tu restes sur la même marche, tu es à la marche #{step}/10."
 				end
 		when dice == 2 || dice == 3 || dice == 4
 			puts "Tu reste sur cette marche, tu es à la marche #{step}/10."
@@ -32,10 +32,10 @@ end
 
 def average_finish_time(turns)
 	games = 0
-	100.times do game
+	100.times do current_game
 	games += 1
 	end
 	puts "les #{games} parties sont effectuées, il y a #{$turns/100} jets de dés en moyenne par tour."
 end
 
-average_finish_time(game)
+average_finish_time(current_game)
