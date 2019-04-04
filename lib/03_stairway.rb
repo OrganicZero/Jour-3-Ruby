@@ -3,7 +3,7 @@ $turns = 0
 def game
 	step = 0
 
-	puts "Bonjour, ceci est notre dernière chance"
+	puts "Bonjour et bienvenue au jeu!"
 
 	while step < 10
 		dice = rand(1..6)
@@ -11,7 +11,7 @@ def game
 		$turns += 1
 		case
 		when dice == 1 
-				if step != 0
+			chance	if step != 0
 					step -= 1
 					puts "Tu as reculé d'une marche, tu es à la marche #{step}/10."
 				else
